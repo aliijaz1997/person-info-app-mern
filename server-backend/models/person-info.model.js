@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 const personSchema = new Schema(
   {
     firstName: { type: String, required: true },
-    lastname: { type: String, required: true },
+    lastName: { type: String, required: true },
     picture: { type: String, required: true },
     profession: { type: String, required: true },
     hairColor: { type: Number, required: true },

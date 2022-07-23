@@ -9,7 +9,7 @@ router.route("/").get((req, res) => {
 
 router.route("/add").post((req, res) => {
   firstName = req.body.firstName
-  lastname = req.body.lastname
+  lastName = req.body.lastName
   picture = req.body.picture
   profession = req.body.profession
   hairColor = req.body.hairColor
@@ -18,12 +18,12 @@ router.route("/add").post((req, res) => {
   waistSize = req.body.waistSize
   height = req.body.height
   weight = req.body.weight
-  dateOfBirthDate = dateOfBirthDate.parse(req.body.date)
+  dateOfBirth = req.body.dateOfBirth
   castings = req.body.castings
 
   const newPerson = new Person({
     firstName,
-    lastname,
+    lastName,
     picture,
     profession,
     hairColor,
@@ -32,12 +32,14 @@ router.route("/add").post((req, res) => {
     waistSize,
     height,
     weight,
-    dateOfBirthDate,
+    dateOfBirth,
     castings
   })
 
   newPerson
     .save()
-    .then(() => res.json("Person added!"))
+    .then(addedPerson => res.json("Person added!"))
     .catch(err => res.status(400).json("Error Occured is " + err))
 })
+
+module.exports = router

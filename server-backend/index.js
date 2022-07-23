@@ -18,6 +18,10 @@ mongooseConnection.once("open", () => {
   console.log("MongoDB Connected Successfully!")
 })
 
+const personsRouter = require("./routes/persons")
+
+app.use("/persons", personsRouter)
+
 app.listen(port, () => {
   console.log(`Server is running at port number = ${port}`)
 })
