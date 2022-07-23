@@ -1,5 +1,8 @@
 import React from "react"
-import { PersonsApis } from "./components/agent"
+import { Route, Routes } from "react-router-dom"
+import { PersonsApis } from "./components/agent/agent"
+import { Layout } from "./components/layout/layout"
+import { PersonsList } from "./components/person/personsList"
 import { Person } from "./components/types/person"
 
 function App() {
@@ -12,7 +15,15 @@ function App() {
     })
   }, [])
 
-  return <div>Hello World</div>
+  const handleAddPerson = () => {}
+  return (
+    <Layout>
+      <Routes>
+        <Route path="/" element={<PersonsList persons={persons} />} />
+        {/* <Route path="/create" component={CreateExercise} /> */}
+      </Routes>
+    </Layout>
+  )
 }
 
 export default App

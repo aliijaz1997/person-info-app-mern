@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from "axios";
-import { Person } from "./types/person";
+import { Person } from "../types/person";
 axios.defaults.baseURL = "http://localhost:4000";
 
 const responseBody = <T>(response: AxiosResponse<T>): T => response.data;
