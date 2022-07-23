@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import { PersonsApis } from "./components/agent"
+import { Person } from "./components/types/person"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const { list, create } = PersonsApis
+  const [persons, setPersons] = React.useState<Person[]>([])
+
+  React.useEffect(() => {
+    list().then(res => {
+      setPersons(res)
+    })
+  }, [])
+
+  return <div>Hello World</div>
 }
 
-export default App;
+export default App
