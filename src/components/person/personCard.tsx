@@ -29,7 +29,7 @@ export function PersonCard({ person }: Props) {
       sx={{
         display: "flex",
         maxWidth: "60rem",
-        boxShadow: "0px 0px 3px 2px #800080        ",
+        boxShadow: "1px 1px 7px 1px #CBC3E3        ",
         p: "10px"
       }}
     >

@@ -83,20 +83,21 @@ export function PersonsList({ persons }: Props) {
           ))}
         </TextField>
       </Box>
-      <Box
-        sx={{
-          justifyContent: "center",
-          display: "flex",
-          pt: "10px",
-          mt: "5rem"
-        }}
-      >
-        {filteredPersons.length
-          ? filteredPersons.map(person => {
-              return <PersonCard key={person._id} person={person} />
-            })
-          : "There is No data available"}
-      </Box>
+      {filteredPersons.length
+        ? filteredPersons.map(person => (
+            <Box
+              sx={{
+                justifyContent: "center",
+                display: "flex",
+                pt: "10px",
+                mt: "5rem"
+              }}
+              key={person._id}
+            >
+              <PersonCard person={person} />
+            </Box>
+          ))
+        : "There is No data available"}
     </Box>
   )
 }
