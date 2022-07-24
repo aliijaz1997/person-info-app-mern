@@ -29,7 +29,7 @@ export function PersonCard({ person }: Props) {
       sx={{
         display: "flex",
         maxWidth: "60rem",
-        boxShadow: "0px 0px 5px #888888",
+        boxShadow: "0px 0px 3px 2px #800080        ",
         p: "10px"
       }}
     >
@@ -169,6 +169,24 @@ export function PersonCard({ person }: Props) {
               sx={{ marginLeft: "2px" }}
             >
               {braSize}
+            </Typography>
+          </Box>
+          <Box sx={{ display: "flex" }}>
+            <Typography
+              variant="subtitle2"
+              color="text.primary"
+              component="div"
+            >
+              Castings
+            </Typography>
+            :
+            <Typography
+              variant="subtitle2"
+              color="text.secondary"
+              component="div"
+              sx={{ marginLeft: "2px" }}
+            >
+              {castings.length && castings.map(c => c)}
             </Typography>
           </Box>
         </CardContent>

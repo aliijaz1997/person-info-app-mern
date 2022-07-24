@@ -11,7 +11,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const pages = ["Persons List", "Submission Form"]
   return (
     <Box>
-      <AppBar position="relative">
+      <AppBar position="relative" sx={{ bgcolor: "#800080" }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <PersonIcon sx={{ display: "flex", mr: 1 }} />
@@ -37,7 +37,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <Button
                   variant="contained"
                   key={page}
-                  sx={{ my: 2, mx: 2, display: "block", bgcolor: "darkblue" }}
+                  sx={{
+                    my: 2,
+                    mx: 2,
+                    display: "block",
+                    bgcolor: "white",
+                    color: "black",
+                    "&:hover": {
+                      backgroundColor: "#fff",
+                      color: "#3c52b2"
+                    }
+                  }}
                 >
                   {page}
                 </Button>
