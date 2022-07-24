@@ -24,12 +24,13 @@ export function PersonCard({ person }: Props) {
     profession,
     picture
   } = person
+  console.log(castings)
   return (
     <Card
       sx={{
         display: "flex",
         maxWidth: "60rem",
-        boxShadow: "0px 0px 3px 2px #800080        ",
+        boxShadow: "0px 0px 17px 1px #CBC3E3",
         p: "10px"
       }}
     >
@@ -186,7 +187,13 @@ export function PersonCard({ person }: Props) {
               component="div"
               sx={{ marginLeft: "2px" }}
             >
-              {castings.length && castings.map(c => c)}
+              {castings.length &&
+                castings.map((c, k) => {
+                  if (k === castings.length - 1) {
+                    return c
+                  }
+                  return `${c}, `
+                })}
             </Typography>
           </Box>
         </CardContent>
