@@ -2,8 +2,10 @@ import React from "react"
 import { Route, Routes } from "react-router-dom"
 import { PersonsApis } from "./components/agent/agent"
 import { Layout } from "./components/layout/layout"
+import { PersonCreate } from "./components/person/personCreate"
 import { PersonsList } from "./components/person/personsList"
 import { Person } from "./components/types/person"
+import "react-toastify/dist/ReactToastify.css"
 
 function App() {
   const { list, create } = PersonsApis
@@ -15,12 +17,11 @@ function App() {
     })
   }, [])
 
-  const handleAddPerson = () => {}
   return (
     <Layout>
       <Routes>
         <Route path="/" element={<PersonsList persons={persons} />} />
-        {/* <Route path="/create" component={CreateExercise} /> */}
+        <Route path="/create" element={<PersonCreate createInfo={create} />} />
       </Routes>
     </Layout>
   )

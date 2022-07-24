@@ -12,6 +12,6 @@ const requests = {
 
 export const PersonsApis = {
   list: () => requests.get<Person[]>("/persons"),
-  create: (payload: Person) =>
+  create: (payload: Omit<Person, "_id">) =>
     requests.post<void>(`/persons/add`, payload),
 };
