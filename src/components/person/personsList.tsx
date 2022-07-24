@@ -29,8 +29,9 @@ export function PersonsList({ persons }: Props) {
   const filteredPersons = React.useMemo(() => {
     if (!search.length) return persons
     if (filter !== "none") {
-      return persons.filter(f =>
-        f[filter as keyof Person].toString().includes(search.toLowerCase())
+      return persons.filter(
+        f => f[filter as keyof Person].toString().includes(search.toLowerCase())
+        // This will also work for any array of string such as castings !
       )
     }
     return persons.filter(
